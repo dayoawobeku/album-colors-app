@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --gutter: 36px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,10 +19,69 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+}
+
+@media screen and (max-width: 360px) {
+  .logo {
+    font-size: clamp(2rem, (100vw - 32px), 11.2vw);
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .logo {
+    font-size: clamp(2rem, (100vw - 32px), 11.55vw);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    font-size: clamp(2rem, (100vw - 32px), 12.05vw);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logo {
+    font-size: clamp(2rem, (100vw - 50px), 12.1758vw);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .logo {
+    font-size: clamp(2rem, (100vw - 50px), 12.2222vw);
+  }
+}
+
+.search form {
+  border: none;
+  padding: 0;
+}
+
+.search input[type='search'] {
+  width: 78px;
+  display: block;
+  padding-left: 20px;
+  background: transparent url('/search.svg') no-repeat 0 center;
+}
+
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+.container-class::-webkit-scrollbar {
+  width: 0.5rem; /* Adjust the width as needed */
+}
+
+.container-class::-webkit-scrollbar-thumb {
+  background: transparent; /* Hide the thumb */
+}
+
+.container-class {
+  scrollbar-width: none; /* Firefox */
+}
+
+.container-class {
+  -ms-overflow-style: none; /* Microsoft Edge */
 }
