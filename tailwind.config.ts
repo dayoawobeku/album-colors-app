@@ -25,6 +25,7 @@ const config: Config = {
         DEFAULT: '#101010',
         800: '#848484',
         700: '#7A7A7A',
+        500: '#BBBBBB',
       },
       transparent: 'transparent',
     },

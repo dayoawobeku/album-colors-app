@@ -13,6 +13,11 @@ const tomatoGrotesk = localFont({
       style: 'normal',
     },
     {
+      path: './TomatoGrotesk-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
       path: './TomatoGrotesk-Bold.woff2',
       weight: '700',
       style: 'normal',

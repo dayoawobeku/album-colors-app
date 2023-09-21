@@ -15,7 +15,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body
-        className={`${tomatoGrotesk.className} bg-white px-4 lg:px-[25px] pt-2 pb-6`}
+        className={`${tomatoGrotesk.className} min-h-screen bg-white px-4 lg:px-[25px] pt-2 pb-6`}
       >
         <Nav />
         {children}

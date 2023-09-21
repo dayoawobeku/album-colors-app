@@ -1,6 +1,27 @@
+'use client';
+
 import Link from 'next/link';
+import {usePathname} from 'next/navigation';
+
+const LINKS = [
+  {
+    label: 'Archive',
+    href: '/archive',
+  },
+  {
+    label: 'Generator',
+    href: '/generator',
+  },
+  {
+    label: 'About',
+    href: '/about',
+  },
+];
 
 export default function Nav() {
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href;
+
   return (
     <header>
       <nav className="text-grey">
@@ -9,21 +30,18 @@ export default function Nav() {
         </Link>
         <div className="flex items-center justify-between">
           <ul className="uppercase font-bold text-sm flex items-center gap-9">
-            <li>
-              <Link href="/archive" className="">
-                Archive
-              </Link>
-            </li>
-            <li>
-              <Link href="/generator" className="">
-                Generator
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="">
-                About
-              </Link>
-            </li>
+            {LINKS.map(({label, href}) => (
+              <li key={label}>
+                <Link
+                  className={`px-1 pb-3 ${
+                    isActive(href) ? 'text-grey' : 'text-grey-800'
+                  }`}
+                  href={href}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
           <form className="flex items-center gap-1 search">
             <input
