@@ -8,11 +8,9 @@ import {Album, Artist} from '@/types';
 export default function ArchiveClient({data}: {data: Artist[]}) {
   const [hoveredAlbum, setHoveredAlbum] = useState<Album | null>(null);
 
-  console.log(hoveredAlbum);
-
   return (
-    <main className="relative mt-24 basis-full flex items-start justify-between pr-[3.4%]">
-      <table className="w-full basis-[54.7%] border-separate border-spacing-y-6">
+    <>
+      <table className="w-full basis-full lg:basis-[54.7%] border-separate border-spacing-y-6">
         <thead>
           <tr>
             <th className="uppercase font-bold text-sm text-grey">Artist</th>
@@ -28,8 +26,8 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
               <tr
                 key={album.album_id}
                 className="group"
-                onMouseEnter={() => setHoveredAlbum(album)}
-                onMouseLeave={() => setHoveredAlbum(null)}
+                onMouseOver={() => setHoveredAlbum(album)}
+                onMouseOut={() => setHoveredAlbum(null)}
               >
                 <td>
                   <Link
@@ -61,7 +59,7 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
         </tbody>
       </table>
       <div
-        className={`fixed right-[4.5%] w-[calc(100vw-72.22vw)] h-[calc(100vw-68.75vw)] rounded basis-[29.79%] transition-all duration-300 ${
+        className={`fixed hidden lg:block lg:right-[4.5%] w-[calc(100vw-72.22vw)] h-[calc(100vw-68.75vw)] rounded basis-[29.79%] transition-all duration-300 ease-in ${
           hoveredAlbum ? 'opacity-100' : 'opacity-0'
         } `}
       >
@@ -78,6 +76,6 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
           />
         ) : null}
       </div>
-    </main>
+    </>
   );
 }

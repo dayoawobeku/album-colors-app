@@ -20,19 +20,37 @@ function AlbumCard({album}: {album: Album}) {
   return (
     <>
       {album && (
-        <Link
-          href={`/album/${album.album_id}`}
-          className="relative bg-[#D9D9D9] w-[calc(100vw-72.22vw)] h-[calc(100vw-68.7vw)] rounded"
-        >
-          <Image
-            src={album.cover_image}
-            alt={album.album_title}
-            fill
-            sizes="(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 50vw"
-            className="rounded object-cover"
-            quality={100}
-          />
-        </Link>
+        <>
+          <Link
+            href={`/album/${album.album_id}`}
+            className="hidden lg:grid relative bg-[#D9D9D9] w-[calc(100vw-72.22vw)] h-[calc(100vw-68.7vw)] rounded"
+          >
+            <Image
+              src={album.cover_image}
+              alt={album.album_title}
+              fill
+              sizes="(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 50vw"
+              className="rounded object-cover"
+              quality={100}
+            />
+          </Link>
+
+          <Link
+            href={`/album/${album.album_id}`}
+            className="lg:hidden bg-[#D9D9D9] w-full rounded"
+          >
+            <Image
+              src={album.cover_image}
+              alt={album.album_title}
+              width={768}
+              height={768}
+              className="rounded object-cover"
+              quality={100}
+              fetchPriority="high"
+              priority
+            />
+          </Link>
+        </>
       )}
     </>
   );
@@ -64,7 +82,7 @@ export default function AlbumCardGrid({data}: {data: Album[]}) {
         ? Array.from({length: 4}).map((_, index) => (
             <div
               key={index}
-              className="relative bg-[#D9D9D9] w-[calc(100vw-72.22vw)] h-[calc(100vw-68.7vw)] rounded"
+              className="relative bg-[#D9D9D9] lg:w-[calc(100vw-72.22vw)] lg:h-[calc(100vw-68.7vw)] rounded"
             />
           ))
         : randomAlbums.map(album => (

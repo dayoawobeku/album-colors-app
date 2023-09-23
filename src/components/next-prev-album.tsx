@@ -28,7 +28,7 @@ export default function NextPrevAlbum({
       currentAlbumIndex < artistAlbums.length - 1
     ) {
       const nextAlbumId = artistAlbums[currentAlbumIndex + 1].album_id;
-      router.push(`/album/${nextAlbumId}`);
+      return nextAlbumId;
     } else {
       // Check if this is the last artist and the last album
       const currentArtistIndex = data.findIndex(
@@ -38,16 +38,14 @@ export default function NextPrevAlbum({
         currentArtistIndex !== undefined &&
         currentArtistIndex === data.length - 1
       ) {
-        const nextArtistId = data[0].id;
         const nextAlbumId = data[0].albums[0]?.album_id;
-        router.push(`/album/${nextAlbumId || ''}?artist=${nextArtistId}`);
+        return nextAlbumId;
       } else if (
         currentArtistIndex !== undefined &&
         currentArtistIndex < data.length - 1
       ) {
-        const nextArtistId = data[currentArtistIndex + 1].id;
         const nextAlbumId = data[currentArtistIndex + 1].albums[0]?.album_id;
-        router.push(`/album/${nextAlbumId || ''}?artist=${nextArtistId}`);
+        return nextAlbumId;
       }
     }
   };
@@ -55,46 +53,43 @@ export default function NextPrevAlbum({
   const goToPreviousAlbum = () => {
     if (currentAlbumIndex !== undefined && currentAlbumIndex > 0) {
       const previousAlbumId = artiste?.albums[currentAlbumIndex - 1].album_id;
-      router.push(`/album/${previousAlbumId}`);
+      return previousAlbumId;
     } else {
       // Check if this is the first artist, if so, go to the last artist
       const currentArtistIndex = data.findIndex(
         artist => artist.id === artiste?.id,
       );
       if (currentArtistIndex !== undefined && currentArtistIndex === 0) {
-        const previousArtistId = data[data.length - 1].id;
         const previousArtistAlbums = data[data.length - 1].albums;
         const previousAlbumId =
           previousArtistAlbums[previousArtistAlbums.length - 1]?.album_id;
-        router.push(
-          `/album/${previousAlbumId || ''}?artist=${previousArtistId}`,
-        );
+        return previousAlbumId;
       } else if (currentArtistIndex !== undefined && currentArtistIndex > 0) {
-        const previousArtistId = data[currentArtistIndex - 1].id;
         const previousArtistAlbums = data[currentArtistIndex - 1].albums;
         const previousAlbumId =
           previousArtistAlbums[previousArtistAlbums.length - 1]?.album_id;
-        router.push(
-          `/album/${previousAlbumId || ''}?artist=${previousArtistId}`,
-        );
+        return previousAlbumId;
       }
     }
   };
 
+  const nextAlbumId = goToNextAlbum();
+  const previousAlbumId = goToPreviousAlbum();
+
   return (
     <div className="flex items-center justify-between">
-      <button
-        onClick={goToPreviousAlbum}
+      <Link
+        href={`/album/${previousAlbumId}`}
         className="uppercase font-bold text-xs text-grey"
       >
         previous
-      </button>
-      <button
-        onClick={goToNextAlbum}
+      </Link>
+      <Link
+        href={`/album/${nextAlbumId}`}
         className="uppercase font-bold text-xs text-grey"
       >
         next
-      </button>
+      </Link>
     </div>
   );
 }

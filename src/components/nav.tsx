@@ -25,15 +25,15 @@ export default function Nav() {
   return (
     <header>
       <nav className="text-grey">
-        <Link href="/" className="block font-bold leading-none logo">
+        <Link href="/" className="block font-bold leading-[1.1] logo">
           ALBUM COLORS
         </Link>
-        <div className="flex items-center justify-between">
-          <ul className="uppercase font-bold text-sm flex items-center gap-9">
+        <div className="mt-4 sm:mt-0 flex items-center justify-between">
+          <ul className="uppercase font-bold text-sm flex items-center gap-4 sm:gap-9">
             {LINKS.map(({label, href}) => (
               <li key={label}>
                 <Link
-                  className={`px-1 pb-3 ${
+                  className={`sm:px-1 sm:pb-3 ${
                     isActive(href) ? 'text-grey' : 'text-grey-800'
                   }`}
                   href={href}

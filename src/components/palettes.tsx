@@ -86,7 +86,7 @@ export default function Palettes({
 
   return (
     <>
-      <div className="flex items-center gap-9 justify-end text-grey text-xs font-bold">
+      <div className="flex flex-wrap items-center gap-4 sm:gap-9 justify-end text-grey text-xs font-bold">
         <button onClick={nextPalette} className="uppercase">
           next palette
         </button>
@@ -98,19 +98,19 @@ export default function Palettes({
         </button>
       </div>
 
-      <div className="mt-6 grid grid-cols-5 gap-9 h-[calc(100vw-75.694vw)]">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-5 gap-4 lg:gap-9 md:h-[calc(100vw-75.694vw)]">
         {allAlbums[currentPaletteIndex].palettes.map((palette, index) => (
           <div
             key={index}
-            className="w-full h-full rounded relative cursor-pointer group"
+            className="w-full h-24 md:h-full rounded relative cursor-pointer group"
             style={{backgroundColor: palette}}
           >
-            <div className="absolute bottom-5 left-5 right-5 space-y-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              <div className="flex items-center justify-between uppercase text-sm font-semibold text-white">
+            <div className="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 right-2 lg:right-5 space-y-4 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+              <div className="flex flex-wrap items-center justify-between uppercase text-xs sm:text-sm font-semibold text-white">
                 <p className="">HEX</p>
                 <p className="">{palette.replace('#', '').toUpperCase()}</p>
               </div>
-              <div className="flex items-center justify-between uppercase text-sm font-semibold text-white">
+              <div className="flex flex-wrap items-center justify-between uppercase text-xs sm:text-sm font-semibold text-white">
                 <p>RGB</p>
                 <p>{hexToRgb(palette)}</p>
               </div>

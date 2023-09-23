@@ -48,7 +48,7 @@ export default function Draggable({
       onMouseMove={handleDrag}
       className={
         rootClass +
-        ' mt-[104px] flex overflow-x-scroll container-class transition-transform duration-300 scroll-snap-type-x mandatory scroll-smooth'
+        ' mt-16 lg:mt-[104px] flex overflow-x-scroll container-class transition-transform duration-300 scroll-snap-type-x mandatory scroll-smooth'
       }
     >
       {children}

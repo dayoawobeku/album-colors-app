@@ -10,7 +10,7 @@ export default async function Generator() {
   }, []);
 
   return (
-    <main className="mt-24">
+    <main className="grow mt-16 sm:mt-24">
       <Palettes allAlbums={allAlbums} data={data || []} />
     </main>
   );

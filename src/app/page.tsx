@@ -11,25 +11,39 @@ export default async function Home() {
   const {data, error} = await supabase.from('artistes').select('*');
 
   return (
-    <Draggable rootClass={'drag'}>
-      <Grid>
-        <AlbumCardGrid data={data as Album[]} />
-        <div className="flex items-center justify-center gap-1 whitespace-nowrap group m-auto">
-          <Link
-            href="/archive"
-            className="text-grey text-sm font-bold uppercase"
-          >
-            See all albums
-          </Link>
-          <Image
-            src={arrowRight}
-            alt="arrow right"
-            width={46}
-            height={18}
-            className="transition-all duration-300 group-hover:translate-x-1"
-          />
-        </div>
-      </Grid>
-    </Draggable>
+    <main className="grow">
+      <Draggable rootClass={'drag'}>
+        <Grid>
+          <AlbumCardGrid data={data as Album[]} />
+          <div className="hidden lg:flex items-center justify-center gap-1 whitespace-nowrap group m-auto">
+            <Link
+              href="/archive"
+              className="text-grey text-sm font-bold uppercase"
+            >
+              See all albums
+            </Link>
+            <Image
+              src={arrowRight}
+              alt="arrow right"
+              width={46}
+              height={18}
+              className="transition-all duration-300 group-hover:translate-x-1"
+            />
+          </div>
+        </Grid>
+      </Draggable>
+      <div className="lg:hidden flex items-center justify-center gap-1 whitespace-nowrap group m-auto">
+        <Link href="/archive" className="text-grey text-sm font-bold uppercase">
+          See all albums
+        </Link>
+        <Image
+          src={arrowRight}
+          alt="arrow right"
+          width={46}
+          height={18}
+          className="transition-all duration-300 group-hover:translate-x-1"
+        />
+      </div>
+    </main>
   );
 }

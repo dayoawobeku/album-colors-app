@@ -85,27 +85,3 @@ input[type='search']::-webkit-search-results-decoration {
 .container-class {
   -ms-overflow-style: none; /* Microsoft Edge */
 }
-
-/* CSS */
-.fadeIn {
-  opacity: 1;
-  transition: opacity 0.35s ease-in-out;
-}
-
-.fadeOut {
-  opacity: 0;
-  transition: opacity 0.35s ease-in-out;
-}
-
-/* CSS */
-.album-cover {
-  transition: opacity 0.35s ease-in-out;
-}
-
-.image-container {
-  opacity: 0;
-}
-
-.album-cover.fade-in .image-container {
-  opacity: 1;
-}
