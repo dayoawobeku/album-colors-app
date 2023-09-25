@@ -7,6 +7,8 @@ import AlbumCardGrid from '@/components/album-card';
 import {supabase} from '@/utils/supabase';
 import {Album} from '@/types';
 
+export const revalidate = 0;
+
 export default async function Home() {
   const {data, error} = await supabase.from('artistes').select('*');
 

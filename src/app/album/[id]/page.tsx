@@ -3,6 +3,8 @@ import NextPrevAlbum from '@/components/next-prev-album';
 import {Album} from '@/types';
 import {supabase} from '@/utils/supabase';
 
+export const revalidate = 0;
+
 export default async function AlbumPage({params}: {params: {id: string}}) {
   const {data, error} = await supabase.from('artistes').select('*');
 
