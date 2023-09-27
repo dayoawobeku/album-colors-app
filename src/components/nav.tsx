@@ -30,9 +30,13 @@ export default function Nav() {
     if (newSearchQuery.length > 0) {
       router.push(`/search?q=${newSearchQuery}`);
     } else {
-      router.push('/search');
+      if (pathname !== '/search') {
+        router.push('/');
+      } else {
+        router.push('/search');
+      }
     }
-  }, 500);
+  }, 1000);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSearchQuery = event.target.value;
