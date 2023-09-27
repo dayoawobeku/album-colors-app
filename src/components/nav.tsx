@@ -1,7 +1,9 @@
 'use client';
 
+import {useState} from 'react';
 import Link from 'next/link';
-import {usePathname} from 'next/navigation';
+import {usePathname, useRouter} from 'next/navigation';
+import debounce from 'lodash/debounce';
 
 const LINKS = [
   {
@@ -19,8 +21,24 @@ const LINKS = [
 ];
 
 export default function Nav() {
+  const router = useRouter();
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const debouncedHandleSearchChange = debounce(newSearchQuery => {
+    if (newSearchQuery.length > 0) {
+      router.push(`/search?q=${newSearchQuery}`);
+    } else {
+      router.push('/search');
+    }
+  }, 500);
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newSearchQuery = event.target.value;
+    setSearchQuery(newSearchQuery);
+    debouncedHandleSearchChange(newSearchQuery);
+  };
 
   return (
     <header>
@@ -48,6 +66,10 @@ export default function Nav() {
               type="search"
               className="h-4 placeholder:text-grey uppercase font-bold text-sm outline-none"
               placeholder="SEARCH"
+              name="q"
+              aria-label="Search"
+              value={searchQuery}
+              onChange={handleSearchChange}
             />
           </form>
         </div>
