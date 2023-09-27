@@ -54,9 +54,7 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
               <p className="uppercase font-bold text-sm text-grey pb-4">
                 designer
               </p>
-              <p className="text-grey-700 font-semibold text-sm pt-4">
-                {new Date(album.release_date).getFullYear()}
-              </p>
+              <p className="text-grey-700 font-semibold text-sm pt-4">-</p>
             </div>
           </div>
         </div>

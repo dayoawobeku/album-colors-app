@@ -67,7 +67,7 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
                   <div
                     className={`fixed ${
                       scrollPosition > 0 ? 'bottom-[13.9%]' : 'bottom-0'
-                    } right-[4.5%] w-[calc(100vw-72.22vw)] h-[calc(100vw-68.75vw)] rounded opacity-0 group-hover:opacity-100 transition-opacity ease-in duration-[350ms]`}
+                    } right-[4.5%] w-[calc(100vw-72.22vw)] h-[calc(100vw-68.75vw)] opacity-0 group-hover:opacity-100 transition-opacity ease-in duration-[350ms]`}
                   >
                     <Image
                       src={album.cover_image}

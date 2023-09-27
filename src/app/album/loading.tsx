@@ -42,7 +42,7 @@ export default function Loading() {
         </div>
       </div>
 
-      <div className="w-full max-w-[500px] h-[100vw] sm:h-[500px] md:hidden bg-grey-500" />
+      <div className="w-full max-w-[500px] h-[calc(100vw-50px)] sm:h-[500px] md:hidden bg-grey-500" />
 
       <div className="relative w-[calc(100vw-72.22vw)] h-[calc(100vw-72.22vw)] bg-grey-500 md:block basis-1/3" />
 

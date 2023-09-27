@@ -34,7 +34,7 @@ export default async function Home() {
           </div>
         </Grid>
       </Draggable>
-      <div className="lg:hidden flex items-center justify-center gap-1 whitespace-nowrap group m-auto">
+      <div className="my-6 lg:hidden flex items-center justify-center gap-1 whitespace-nowrap group m-auto">
         <Link href="/archive" className="text-grey text-sm font-bold uppercase">
           See all albums
         </Link>
