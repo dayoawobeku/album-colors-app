@@ -63,7 +63,7 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
                     {album.release_date.split('-')[0]}
                   </Link>
                 </td>
-                <td className="hidden sm:block">
+                <td className="hidden sm:block pointer-events-none">
                   <div
                     className={`fixed ${
                       scrollPosition > 0 ? 'bottom-[13.9%]' : 'bottom-0'
