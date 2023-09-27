@@ -21,13 +21,13 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 375px) {
   .logo {
     font-size: clamp(2rem, (100vw - 32px), 11.2vw);
   }
 }
 
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 375px) {
   .logo {
     font-size: clamp(2rem, (100vw - 32px), 11.55vw);
   }
@@ -40,12 +40,6 @@ body {
 }
 
 @media screen and (min-width: 1280px) {
-  .logo {
-    font-size: clamp(2rem, (100vw - 50px), 12.1758vw);
-  }
-}
-
-@media screen and (min-width: 1440px) {
   .logo {
     font-size: clamp(2rem, (100vw - 50px), 12vw);
   }

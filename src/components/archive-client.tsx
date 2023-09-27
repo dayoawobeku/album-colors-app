@@ -25,7 +25,7 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
 
   return (
     <div className="flex basis-full">
-      <table className="w-full basis-[54.7%] border-separate border-spacing-y-6">
+      <table className="w-full basis-full sm:basis-[54.7%] border-separate border-spacing-y-6">
         <thead>
           <tr>
             <th className="uppercase font-bold text-sm text-grey">Artist</th>

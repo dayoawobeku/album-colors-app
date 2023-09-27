@@ -1,8 +1,7 @@
 export default function Loading() {
-  // Or a custom loading skeleton component
   return (
-    <div className="grow mt-16 sm:mt-24 flex items-center justify-between basis-full px-6 gap-[5.42%]">
-      <div className="basis-1/3">
+    <div className="grow mt-16 sm:mt-24 flex flex-col md:flex-row items-stretch md:items-center justify-between basis-full xl:px-6 gap-4 xl:gap-[5.42%]">
+      <div className="basis-full md:basis-1/3">
         <div className="flex items-center justify-between">
           <button className="uppercase font-bold text-xs text-grey">
             previous
@@ -11,9 +10,9 @@ export default function Loading() {
             next
           </button>
         </div>
-        <div className="mt-6 space-y-10">
-          <div className="border border-1 border-grey-500 px-12 py-4 relative flex items-center justify-between">
-            <div className="h-[0.5px] w-full bg-grey-500 absolute -mx-12" />
+        <div className="mt-6 space-y-4 lg:space-y-10">
+          <div className="border border-1 border-grey-500 px-2 lg:px-12 py-4 relative flex items-center justify-between">
+            <div className="h-[0.5px] w-full bg-grey-500 absolute -mx-2 lg:-mx-12" />
             <div className="flex flex-col items-center justify-between">
               <p className="uppercase font-bold text-sm text-grey pb-4">
                 artist
@@ -27,7 +26,7 @@ export default function Loading() {
               <p className="text-grey-700 font-semibold text-sm pt-4">-</p>
             </div>
           </div>
-          <div className="border border-1 border-grey-500 px-12 py-4 relative flex items-center justify-between">
+          <div className="border border-1 border-grey-500 px-2 lg:px-12 py-4 relative flex items-center justify-between">
             <div className="h-[0.5px] w-full bg-grey-500 absolute -mx-12" />
             <div className="flex flex-col items-center justify-between">
               <p className="uppercase font-bold text-sm text-grey pb-4">year</p>
@@ -43,10 +42,12 @@ export default function Loading() {
         </div>
       </div>
 
-      <div className="relative w-[calc(100vw-72.22vw)] h-[calc(100vw-72.22vw)] basis-1/3 bg-grey-500" />
+      <div className="w-full max-w-[500px] h-[100vw] sm:h-[500px] md:hidden bg-grey-500" />
 
-      <div className="basis-1/3">
-        <div className="border border-1 border-grey-500 px-10 pt-4 relative flex items-start justify-between">
+      <div className="relative w-[calc(100vw-72.22vw)] h-[calc(100vw-72.22vw)] bg-grey-500 md:block basis-1/3" />
+
+      <div className="basis-full md:basis-1/3">
+        <div className="border border-1 border-grey-500 px-2 lg:px-10 pt-4 relative flex items-start justify-between">
           <div className="flex flex-col items-center justify-between">
             <p className="uppercase font-bold text-sm text-grey pb-4">color</p>
             {Array.from({length: 5}).map((_, index) => (

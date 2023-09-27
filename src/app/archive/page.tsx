@@ -11,7 +11,7 @@ export default async function Archive() {
 
   return (
     <main className="grow relative mt-16 sm:mt-24 basis-full flex items-start justify-between lg:pr-[3.4%]">
-      <ArchiveClient data={data || []} />;
+      <ArchiveClient data={data || []} />
     </main>
   );
 }
