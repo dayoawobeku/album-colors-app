@@ -138,7 +138,7 @@ export default function Palettes({
                 copiedStates[index] ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <p className="text-sm font-semibold">copied</p>
+              <p className="text-xs sm:text-sm font-semibold">copied</p>
             </div>
             <div className="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 right-2 lg:right-5 space-y-4 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
               <div className="flex flex-wrap items-center justify-between uppercase text-xs sm:text-sm font-semibold text-white">
