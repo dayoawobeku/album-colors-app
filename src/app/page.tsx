@@ -1,3 +1,4 @@
+import type {Metadata} from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import {arrowRight} from '@/assets/images';
@@ -6,6 +7,11 @@ import Grid from '@/components/grid';
 import AlbumCardGrid from '@/components/album-card';
 import {supabase} from '@/utils/supabase';
 import {Album} from '@/types';
+
+const metadata: Metadata = {
+  title: 'album color homepage',
+  description: 'album color homepage',
+};
 
 export const revalidate = 0;
 
@@ -49,3 +55,5 @@ export default async function Home() {
     </main>
   );
 }
+
+export {metadata};

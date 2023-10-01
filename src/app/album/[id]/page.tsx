@@ -1,3 +1,4 @@
+import type {Metadata, ResolvingMetadata} from 'next';
 import Image from 'next/image';
 import NextPrevAlbum from '@/components/next-prev-album';
 import {Album} from '@/types';
@@ -5,16 +6,45 @@ import {supabase} from '@/utils/supabase';
 
 export const revalidate = 0;
 
-export default async function AlbumPage({params}: {params: {id: string}}) {
-  const {data, error} = await supabase.from('artistes').select('*');
+export async function generateMetadata(
+  {params}: {params: {id: string}},
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const id = params.id;
+
+  const {data} = await supabase.from('artistes').select('*');
 
   const artiste = data?.find(
-    artist =>
-      artist?.albums?.some((album: Album) => album.album_id === params.id),
+    artist => artist?.albums?.some((album: Album) => album.album_id === id),
   );
 
   const album: Album = artiste.albums.find(
-    (album: Album) => album.album_id === params.id,
+    (album: Album) => album.album_id === id,
+  );
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: `${artiste.name} - ${album.album_title}`,
+    description: `${artiste.name} - ${album.album_title}`,
+    openGraph: {
+      images: [album.cover_image, ...previousImages],
+    },
+  };
+}
+
+export default async function AlbumPage({params}: {params: {id: string}}) {
+  const id = params.id;
+
+  const {data, error} = await supabase.from('artistes').select('*');
+
+  const artiste = data?.find(
+    artist => artist?.albums?.some((album: Album) => album.album_id === id),
+  );
+
+  const album: Album = artiste.albums.find(
+    (album: Album) => album.album_id === id,
   );
 
   return (
@@ -68,6 +98,7 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
           quality={100}
           width={500}
           height={500}
+          priority
         />
       </div>
 
@@ -79,6 +110,7 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
           sizes="(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 50vw"
           className="object-cover"
           quality={100}
+          priority
         />
       </div>
 

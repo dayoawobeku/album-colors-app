@@ -1,5 +1,11 @@
+import type {Metadata} from 'next';
 import SearchClient from '@/components/search';
 import {supabase} from '@/utils/supabase';
+
+const metadata: Metadata = {
+  title: 'album color search page',
+  description: 'album color search page',
+};
 
 export const revalidate = 0;
 
@@ -12,3 +18,5 @@ export default async function Search() {
     </main>
   );
 }
+
+export {metadata};

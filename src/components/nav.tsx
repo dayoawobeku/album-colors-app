@@ -1,8 +1,7 @@
 'use client';
 
-import {useState} from 'react';
 import Link from 'next/link';
-import {usePathname, useRouter} from 'next/navigation';
+import {usePathname, useRouter, useSearchParams} from 'next/navigation';
 import debounce from 'lodash/debounce';
 
 const LINKS = [
@@ -23,12 +22,20 @@ const LINKS = [
 export default function Nav() {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const isActive = (href: string) => pathname === href;
-  const [searchQuery, setSearchQuery] = useState('');
 
   const debouncedHandleSearchChange = debounce(newSearchQuery => {
+    const url = new URLSearchParams(Array.from(searchParams.entries()));
+
     if (newSearchQuery.length > 0) {
-      router.push(`/search?q=${newSearchQuery}`);
+      url.set('q', newSearchQuery);
+    }
+
+    const query = url.toString().length > 0 ? `?${url.toString()}` : '';
+
+    if (newSearchQuery.length > 0) {
+      router.push(`/search${query}`);
     } else {
       if (pathname !== '/search') {
         router.push('/');
@@ -40,7 +47,6 @@ export default function Nav() {
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSearchQuery = event.target.value;
-    setSearchQuery(newSearchQuery);
     debouncedHandleSearchChange(newSearchQuery);
   };
 
@@ -70,10 +76,12 @@ export default function Nav() {
               type="search"
               className="h-4 placeholder:text-grey uppercase font-bold text-sm outline-none"
               placeholder="SEARCH"
-              name="q"
+              name="search"
               aria-label="Search"
-              value={searchQuery}
+              defaultValue={searchParams?.get('q') || ''}
               onChange={handleSearchChange}
+              key={searchParams?.get('q')}
+              autoComplete="off"
             />
           </form>
         </div>

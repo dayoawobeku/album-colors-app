@@ -1,3 +1,10 @@
+import type {Metadata} from 'next';
+
+const metadata: Metadata = {
+  title: 'album color about page',
+  description: 'album color about page',
+};
+
 export default async function About() {
   return (
     <main className="mt-20 md:mt-0 md:grow flex flex-col items-center justify-center gap-10 max-w-xl mx-auto">
@@ -29,3 +36,5 @@ export default async function About() {
     </main>
   );
 }
+
+export {metadata};

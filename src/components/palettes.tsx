@@ -11,9 +11,15 @@ export default function Palettes({
   allAlbums: Album[];
   data: Artist[];
 }) {
+  const initialCopiedStates = Array(allAlbums[0].palettes.length).fill(false);
+
   const [currentPaletteIndex, setCurrentPaletteIndex] = useState(0);
+  const [copiedStates, setCopiedStates] =
+    useState<boolean[]>(initialCopiedStates);
 
   const nextPalette = () => {
+    setCopiedStates(initialCopiedStates);
+
     if (currentPaletteIndex < allAlbums.length - 1) {
       setCurrentPaletteIndex(currentPaletteIndex + 1);
     } else {
@@ -22,6 +28,8 @@ export default function Palettes({
   };
 
   const previousPalette = () => {
+    setCopiedStates(initialCopiedStates);
+
     if (currentPaletteIndex > 0) {
       setCurrentPaletteIndex(currentPaletteIndex - 1);
     } else {
@@ -84,6 +92,24 @@ export default function Palettes({
     }
   };
 
+  const handleCopy = (paletteIndex: number) => {
+    const palette = allAlbums[currentPaletteIndex].palettes[paletteIndex];
+    navigator.clipboard.writeText(palette);
+    setCopiedStates(prevState => {
+      const newState = [...prevState];
+      newState[paletteIndex] = true;
+      return newState;
+    });
+
+    setTimeout(() => {
+      setCopiedStates(prevState => {
+        const newState = [...prevState];
+        newState[paletteIndex] = false;
+        return newState;
+      });
+    }, 1500);
+  };
+
   return (
     <>
       <div className="flex flex-wrap items-center gap-4 sm:gap-9 justify-end text-grey text-xs font-bold">
@@ -104,11 +130,20 @@ export default function Palettes({
             key={index}
             className="w-full h-24 md:h-full rounded relative cursor-pointer group"
             style={{backgroundColor: palette}}
+            tabIndex={0}
+            onClick={() => handleCopy(index)}
           >
+            <div
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase opacity-0 transition-opacity duration-300 ${
+                copiedStates[index] ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <p className="text-sm font-semibold">copied</p>
+            </div>
             <div className="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 right-2 lg:right-5 space-y-4 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
               <div className="flex flex-wrap items-center justify-between uppercase text-xs sm:text-sm font-semibold text-white">
-                <p className="">HEX</p>
-                <p className="">{palette.replace('#', '').toUpperCase()}</p>
+                <p>HEX</p>
+                <p>{palette.replace('#', '').toUpperCase()}</p>
               </div>
               <div className="flex flex-wrap items-center justify-between uppercase text-xs sm:text-sm font-semibold text-white">
                 <p>RGB</p>

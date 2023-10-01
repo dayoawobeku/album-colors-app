@@ -1,6 +1,12 @@
+import type {Metadata} from 'next';
 import {supabase} from '@/utils/supabase';
 import {Album} from '@/types';
 import Palettes from '@/components/palettes';
+
+const metadata: Metadata = {
+  title: 'album color generator page',
+  description: 'album color generator page',
+};
 
 export const revalidate = 0;
 
@@ -20,3 +26,5 @@ export default async function Generator() {
     </main>
   );
 }
+
+export {metadata};

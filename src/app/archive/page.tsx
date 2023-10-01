@@ -1,5 +1,11 @@
+import type {Metadata} from 'next';
 import {supabase} from '@/utils/supabase';
 import ArchiveClient from '@/components/archive-client';
+
+const metadata: Metadata = {
+  title: 'album color archive page',
+  description: 'album color archive page',
+};
 
 export const revalidate = 0;
 
@@ -15,3 +21,5 @@ export default async function Archive() {
     </main>
   );
 }
+
+export {metadata};

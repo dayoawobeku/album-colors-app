@@ -32,6 +32,7 @@ function AlbumCard({album}: {album: Album}) {
               sizes="(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 50vw"
               className="rounded object-cover"
               quality={100}
+              priority
             />
           </Link>
 
@@ -61,6 +62,7 @@ export default function AlbumCardGrid({data}: {data: Album[]}) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (!data || data.length === 0) return;
     const randomArtists = shuffleArray(data).slice(0, 4);
     const randomAlbums = randomArtists
       .map((artist: DataItem) => {
