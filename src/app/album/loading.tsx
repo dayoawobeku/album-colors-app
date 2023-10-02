@@ -1,7 +1,7 @@
 export default function Loading() {
   return (
-    <div className="grow mt-16 sm:mt-24 flex flex-col md:flex-row items-stretch md:items-center justify-between basis-full xl:px-6 gap-4 xl:gap-[5.42%]">
-      <div className="basis-full md:basis-1/3">
+    <div className="grow mt-16 sm:mt-24 flex flex-col lg:flex-row items-stretch lg:items-center justify-between basis-full xl:px-6 gap-4 xl:gap-[5.42%]">
+      <div className="basis-full lg:basis-1/3">
         <div className="flex items-center justify-between">
           <button className="uppercase font-bold text-xs text-grey">
             previous
@@ -40,13 +40,17 @@ export default function Loading() {
             </div>
           </div>
         </div>
+        <p className="hidden lg:inline-block mt-4 xl:mt-6 text-xs text-grey-700 font-medium">
+          All album covers are property of their respective artists and record
+          labels. We do not have any claim to ownership.
+        </p>
       </div>
 
-      <div className="w-full max-w-[500px] h-[calc(100vw-50px)] sm:h-[500px] md:hidden bg-grey-500" />
+      <div className="w-full max-w-[500px] h-[calc(100vw-32px)] sm:h-[500px] lg:hidden bg-grey-500" />
 
-      <div className="relative w-[calc(100vw-72.22vw)] h-[calc(100vw-72.22vw)] bg-grey-500 md:block basis-1/3" />
+      <div className="relative w-[calc(100vw-72.22vw)] h-[calc(100vw-72.22vw)] bg-grey-500 lg:block basis-1/3" />
 
-      <div className="basis-full md:basis-1/3">
+      <div className="basis-full lg:basis-1/3">
         <div className="border border-1 border-grey-500 px-2 lg:px-10 pt-4 relative flex items-start justify-between">
           <div className="flex flex-col items-center justify-between">
             <p className="uppercase font-bold text-sm text-grey pb-4">color</p>
@@ -82,6 +86,11 @@ export default function Loading() {
           <div className="h-[0.5px] w-full bg-grey-500 absolute top-[82.8%] -mx-10" />
         </div>
       </div>
+
+      <p className="mt-6 text-xs text-grey-700 font-medium lg:hidden">
+        All album covers are property of their respective artists and record
+        labels. We do not have any claim to ownership.
+      </p>
     </div>
   );
 }

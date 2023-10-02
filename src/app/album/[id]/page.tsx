@@ -48,11 +48,11 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
   );
 
   return (
-    <main className="grow mt-16 sm:mt-24 flex flex-col md:flex-row items-stretch md:items-center justify-between basis-full xl:px-6 gap-4 xl:gap-[5.42%]">
-      <div className="basis-full md:basis-1/3">
+    <main className="grow mt-16 sm:mt-24 flex flex-col lg:flex-row items-stretch lg:items-center justify-between basis-full xl:px-6 gap-4 xl:gap-[5.42%]">
+      <div className="basis-full lg:basis-1/3">
         <NextPrevAlbum data={data || []} params={params} />
 
-        <div className="mt-6 space-y-4 lg:space-y-10">
+        <div className="mt-6 space-y-4 xl:space-y-10">
           <div className="border border-1 border-grey-500 px-2 lg:px-12 py-4 relative flex items-center justify-between">
             <div className="h-[0.5px] w-full bg-grey-500 absolute -mx-2 lg:-mx-12" />
             <div className="flex flex-col items-center justify-between">
@@ -88,9 +88,14 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
             </div>
           </div>
         </div>
+
+        <p className="hidden lg:inline-block mt-4 xl:mt-6 text-xs text-grey-700 font-medium">
+          All album covers are property of their respective artists and record
+          labels. We do not have any claim to ownership.
+        </p>
       </div>
 
-      <div className="md:hidden basis-full">
+      <div className="lg:hidden basis-full">
         <Image
           src={album.cover_image}
           alt={album.album_title}
@@ -102,7 +107,7 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
         />
       </div>
 
-      <div className="hidden md:block relative w-[calc(100vw-72.22vw)] h-[calc(100vw-72.22vw)] basis-1/3">
+      <div className="hidden lg:block relative w-[calc(100vw-72.22vw)] h-[calc(100vw-72.22vw)] basis-1/3">
         <Image
           src={album.cover_image}
           alt={album.album_title}
@@ -114,7 +119,7 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
         />
       </div>
 
-      <div className="basis-full md:basis-1/3">
+      <div className="basis-full lg:basis-1/3">
         <div className="border border-1 border-grey-500 px-2 lg:px-10 pt-4 relative flex items-start justify-between">
           <div className="flex flex-col items-center justify-between">
             <p className="uppercase font-bold text-sm text-grey pb-4">color</p>
@@ -153,6 +158,11 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
           <div className="h-[0.5px] w-full bg-grey-500 absolute top-[66.2%] -mx-2 lg:-mx-10" />
           <div className="h-[0.5px] w-full bg-grey-500 absolute top-[82.8%] -mx-2 lg:-mx-10" />
         </div>
+
+        <p className="mt-6 text-xs text-grey-700 font-medium lg:hidden">
+          All album covers are property of their respective artists and record
+          labels. We do not have any claim to ownership.
+        </p>
       </div>
     </main>
   );
