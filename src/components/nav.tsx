@@ -71,19 +71,21 @@ export default function Nav() {
               </li>
             ))}
           </ul>
-          <form className="flex items-center gap-1 search">
-            <input
-              type="search"
-              className="h-4 placeholder:text-grey uppercase font-bold text-sm outline-none"
-              placeholder="SEARCH"
-              name="search"
-              aria-label="Search"
-              defaultValue={searchParams?.get('q') || ''}
-              onChange={handleSearchChange}
-              key={searchParams?.get('q')}
-              autoComplete="off"
-            />
-          </form>
+          <search>
+            <form className="flex items-center gap-1 search">
+              <input
+                type="search"
+                className="h-4 placeholder:text-grey uppercase font-bold text-sm outline-none"
+                placeholder="SEARCH"
+                name="search"
+                aria-label="Search"
+                defaultValue={searchParams?.get('q') || ''}
+                onChange={handleSearchChange}
+                key={searchParams?.get('q')}
+                autoComplete="off"
+              />
+            </form>
+          </search>
         </div>
       </nav>
     </header>

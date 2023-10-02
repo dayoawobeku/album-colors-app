@@ -37,7 +37,7 @@ export default function SearchClient({data}: {data: Artist[]}) {
     <>
       {searchQuery.length > 0 ? (
         filteredData.length > 0 ? (
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredData
               .filter(
                 (artist: Artist | null): artist is Artist => artist !== null,
@@ -46,7 +46,7 @@ export default function SearchClient({data}: {data: Artist[]}) {
                 artist.albums.map((album: Album) => (
                   <Link
                     href={`/album/${album.album_id}`}
-                    className="relative w-[calc(100vw-68.8vw)] h-[calc(100vw-63.6vw)] bg-grey-500 rounded"
+                    className="relative max-w-[calc(100vw-0vw)] h-[calc(100vw-0vw)] w-full sm:max-w-[calc(100vw-52.5vw)] lg:max-w-[calc(100vw-62.8vw)] sm:h-[calc(100vw-50vw)] lg:h-[calc(100vw-63.6vw)] bg-grey-500 rounded"
                     key={album.album_id}
                   >
                     <Image
