@@ -26,7 +26,7 @@ export default function AlbumTable({album}: {album: Album}) {
   return (
     <>
       <div
-        className={`absolute bottom-9 lg:bottom-auto lg:-top-6 left-1/2 -translate-x-[70%] uppercase opacity-0 transition-opacity duration-300 ${
+        className={`absolute bottom-9 sm:bottom-5 lg:bottom-auto lg:-top-6 left-1/2 -translate-x-[70%] uppercase opacity-0 transition-opacity duration-300 ${
           copied ? 'opacity-100' : 'opacity-0'
         }`}
       >
