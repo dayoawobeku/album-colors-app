@@ -4,6 +4,9 @@ export interface Album {
   cover_image: string;
   release_date: string;
   palettes: string[];
+  genres: string[];
+  album_url: string;
+  apple_music_url: string;
 }
 
 export interface Artist {

@@ -7,7 +7,7 @@ const metadata: Metadata = {
 
 export default async function About() {
   return (
-    <main className="mt-20 md:mt-0 md:grow flex flex-col items-center justify-center gap-10 max-w-xl mx-auto">
+    <main className="mt-20 md:mt-0 md:grow flex flex-col items-start justify-center gap-10 max-w-xl mx-auto">
       <div className="text-sm">
         <p className="uppercase text-grey font-bold">ABOUT ALBUM COLOURS</p>
         <p className="mt-4 text-grey-800 font-medium">
@@ -16,6 +16,31 @@ export default async function About() {
           and other creatives get visual inspiration from their albums of
           choice. We are constantly updating new album covers and colour
           information. There are possibly millions of album covers after all.
+        </p>
+      </div>
+      <div className="text-sm">
+        <p className="uppercase text-grey font-bold">WHO ARE WE</p>
+        <p className="mt-4 text-grey-800 font-medium">
+          <a
+            href="https://read.cv/dammy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Oyindamola Ajibike
+          </a>{' '}
+          - pixels bending product designer
+        </p>
+        <p className="text-grey-800 font-medium">
+          <a
+            href="https://dayoawobeku.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Dayo Awobeku
+          </a>{' '}
+          - frontend developer crafting pixel-perfect, high-quality applications
         </p>
       </div>
       <div className="text-sm">

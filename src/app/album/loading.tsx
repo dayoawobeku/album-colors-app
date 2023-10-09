@@ -34,7 +34,7 @@ export default function Loading() {
             </div>
             <div className="flex flex-col items-center justify-between">
               <p className="uppercase font-bold text-sm text-grey pb-4">
-                designer
+                genre
               </p>
               <p className="text-grey-700 font-semibold text-sm pt-4">-</p>
             </div>

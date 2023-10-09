@@ -3,6 +3,8 @@ import Image from 'next/image';
 import NextPrevAlbum from '@/components/next-prev-album';
 import {Album} from '@/types';
 import {supabase} from '@/utils/supabase';
+import AlbumTable from '@/components/album-table';
+import {external} from '@/assets/images';
 
 export const revalidate = 0;
 
@@ -82,9 +84,11 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
             </div>
             <div className="flex flex-col items-center justify-between">
               <p className="uppercase font-bold text-sm text-grey pb-4">
-                designer
+                genre
               </p>
-              <p className="text-grey-700 font-semibold text-sm pt-4">-</p>
+              <p className="text-grey-700 font-semibold text-sm pt-4">
+                {album.genres.join(', ') || '-'}
+              </p>
             </div>
           </div>
         </div>
@@ -107,57 +111,40 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
         />
       </div>
 
-      <div className="hidden lg:block relative w-[calc(100vw-72.22vw)] h-[calc(100vw-72.22vw)] basis-1/3">
+      <div className="hidden lg:block relative w-[calc(100vw-72.22vw)] h-[calc(100vw-72.22vw)] basis-1/3 group">
+        <div className="absolute w-full left-1/2 -translate-x-1/2 z-10 top-1/2 -translate-y-1/2 flex items-center justify-center gap-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <a
+            href={album.album_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="uppercase text-xs font-semibold text-grey flex items-center bg-white p-2"
+          >
+            <p>Spotify</p>
+            <Image src={external} alt="external" width={24} height={24} />
+          </a>
+          <a
+            href={album.apple_music_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="uppercase text-xs font-semibold text-grey flex items-center bg-white p-2"
+          >
+            <p>Apple Music</p>
+            <Image src={external} alt="external" width={24} height={24} />
+          </a>
+        </div>
         <Image
           src={album.cover_image}
           alt={album.album_title}
           fill
           sizes="(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 50vw"
-          className="object-cover"
+          className="object-cover group-hover:brightness-75 transition-all ease-in-out duration-300"
           quality={100}
           priority
         />
       </div>
 
-      <div className="basis-full lg:basis-1/3">
-        <div className="border border-1 border-grey-500 px-2 lg:px-10 pt-4 relative flex items-start justify-between">
-          <div className="flex flex-col items-center justify-between">
-            <p className="uppercase font-bold text-sm text-grey pb-4">color</p>
-            {album.palettes.map((palette, index) => (
-              <div key={index} className="py-4">
-                <div
-                  className="w-[60px] h-5"
-                  style={{backgroundColor: palette}}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-col items-center justify-between">
-            <p className="uppercase font-bold text-sm text-grey pb-4">hex</p>
-            {album.palettes.map((palette, index) => (
-              <p key={index} className="text-grey-700 font-medium text-sm py-4">
-                {palette.replace('#', '').toUpperCase()}
-              </p>
-            ))}
-          </div>
-          <div className="flex flex-col items-center justify-between">
-            <p className="uppercase font-bold text-sm text-grey pb-4">rgb</p>
-            {album.palettes.map((palette, index) => (
-              <p key={index} className="text-grey-700 font-medium text-sm py-4">
-                {palette
-                  .replace('#', '')
-                  .match(/.{1,2}/g)
-                  ?.map(hex => parseInt(hex, 16))
-                  .join(', ')}
-              </p>
-            ))}
-          </div>
-          <div className="h-[0.5px] w-full bg-grey-500 absolute top-[16.6%] -mx-2 lg:-mx-10" />
-          <div className="h-[0.5px] w-full bg-grey-500 absolute top-[33.1%] -mx-2 lg:-mx-10" />
-          <div className="h-[0.5px] w-full bg-grey-500 absolute top-[49.7%] -mx-2 lg:-mx-10" />
-          <div className="h-[0.5px] w-full bg-grey-500 absolute top-[66.2%] -mx-2 lg:-mx-10" />
-          <div className="h-[0.5px] w-full bg-grey-500 absolute top-[82.8%] -mx-2 lg:-mx-10" />
-        </div>
+      <div className="basis-full lg:basis-1/3 relative">
+        <AlbumTable album={album} />
 
         <p className="mt-6 text-xs text-grey-700 font-medium lg:hidden">
           All album covers are property of their respective artists and record
