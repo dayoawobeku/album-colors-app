@@ -56,7 +56,7 @@ export default function Nav() {
         <Link href="/" className="block font-bold leading-[1.1] logo">
           ALBUM COLORS
         </Link>
-        <div className="mt-4 sm:mt-0 flex items-center justify-between">
+        <div className="mt-4 sm:mt-0 flex items-center justify-between gap-4 flex-wrap">
           <ul className="uppercase font-bold text-sm flex items-center gap-4 sm:gap-9">
             {LINKS.map(({label, href}) => (
               <li key={label}>
@@ -76,7 +76,7 @@ export default function Nav() {
               <input
                 type="search"
                 className="h-4 placeholder:text-grey uppercase font-bold text-sm outline-none"
-                placeholder="SEARCH"
+                placeholder="SEARCH AN ALBUM OR ARTISTE"
                 name="search"
                 aria-label="Search"
                 defaultValue={searchParams?.get('q') || ''}

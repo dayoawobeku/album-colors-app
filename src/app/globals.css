@@ -51,7 +51,7 @@ body {
 }
 
 .search input[type='search'] {
-  width: 78px;
+  width: 240px;
   display: block;
   padding-left: 20px;
   background: transparent url('/search.svg') no-repeat 0 center;
