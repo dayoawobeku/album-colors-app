@@ -55,39 +55,43 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
         <NextPrevAlbum data={data || []} params={params} />
 
         <div className="mt-6 space-y-4 xl:space-y-10">
-          <div className="border border-1 border-grey-500 px-2 lg:px-12 py-4 relative flex items-center justify-between">
-            <div className="h-[0.5px] w-full bg-grey-500 absolute -mx-2 lg:-mx-12" />
+          <div className="border border-1 border-grey-500 px-2 lg:px-6 xl:px-12 py-4 relative flex items-center justify-between">
+            <div className="h-[0.5px] w-full bg-grey-500 absolute -mx-2 lg:-mx-6 xl:-mx-12" />
             <div className="flex flex-col items-center justify-between">
-              <p className="uppercase font-bold text-sm text-grey pb-4">
+              <p className="uppercase font-bold text-sm text-grey pb-4 text-center">
                 artist
               </p>
-              <p className="text-grey-700 font-semibold text-sm pt-4">
+              <p className="text-grey-700 font-semibold text-sm pt-4 text-center">
                 {artiste.name}
               </p>
             </div>
             <div className="flex flex-col items-center justify-between">
-              <p className="uppercase font-bold text-sm text-grey pb-4">
+              <p className="uppercase font-bold text-sm text-grey pb-4 text-center">
                 album title
               </p>
-              <p className="text-grey-700 font-semibold text-sm pt-4">
+              <p className="text-grey-700 font-semibold text-sm pt-4 text-center">
                 {album.album_title}
               </p>
             </div>
           </div>
-          <div className="border border-1 border-grey-500 px-2 lg:px-12 py-4 relative flex items-center justify-between">
-            <div className="h-[0.5px] w-full bg-grey-500 absolute -mx-2 lg:-mx-12" />
+          <div className="border border-1 border-grey-500 px-2 lg:px-6 xl:px-12 py-4 relative flex items-center justify-between">
+            <div className="h-[0.5px] w-full bg-grey-500 absolute -mx-2 lg:-mx-6 xl:-mx-12" />
             <div className="flex flex-col items-center justify-between">
-              <p className="uppercase font-bold text-sm text-grey pb-4">year</p>
-              <p className="text-grey-700 font-semibold text-sm pt-4">
+              <p className="uppercase font-bold text-sm text-grey pb-4 text-center">
+                year
+              </p>
+              <p className="text-grey-700 font-semibold text-sm pt-4 text-center">
                 {new Date(album.release_date).getFullYear()}
               </p>
             </div>
             <div className="flex flex-col items-center justify-between">
-              <p className="uppercase font-bold text-sm text-grey pb-4">
+              <p className="uppercase font-bold text-sm text-grey pb-4 text-center">
                 genre
               </p>
-              <p className="text-grey-700 font-semibold text-sm pt-4">
-                {album.genres.join(', ') || '-'}
+              <p className="text-grey-700 font-semibold text-sm pt-4 text-center">
+                {album.genres
+                  .map(genre => genre[0].toUpperCase() + genre.slice(1))
+                  .join(', ') || '-'}
               </p>
             </div>
           </div>
