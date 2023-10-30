@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import {usePathname, useRouter, useSearchParams} from 'next/navigation';
 import debounce from 'lodash/debounce';
 
@@ -50,18 +51,28 @@ export default function Nav() {
     debouncedHandleSearchChange(newSearchQuery);
   };
 
+  const aspectRatio = 140 / 1390;
+
   return (
     <header>
       <nav className="text-grey">
-        <Link href="/" className="block font-bold leading-[1.1] logo">
-          ALBUM COLORS
+        <Link
+          href="/"
+          className="relative block w-[calc(100vw-24px)] lg:w-[calc(100vw-48px)] max-w-full mt-3 lg:mt-6"
+        >
+          <div
+            className="relative w-full h-0"
+            style={{paddingBottom: `${aspectRatio * 100}%`}}
+          >
+            <Image src="/logo.svg" alt="" fill className="object-contain" />
+          </div>
         </Link>
-        <div className="mt-4 sm:mt-0 flex items-center justify-between gap-4 flex-wrap">
+        <div className="mt-4 sm:mt-8 flex items-center justify-between gap-4 flex-wrap">
           <ul className="uppercase font-bold text-sm flex items-center gap-4 sm:gap-9">
             {LINKS.map(({label, href}) => (
               <li key={label}>
                 <Link
-                  className={`sm:px-1 sm:pb-3 ${
+                  className={`sm:px-1 ${
                     isActive(href) ? 'text-grey' : 'text-grey-800'
                   }`}
                   href={href}

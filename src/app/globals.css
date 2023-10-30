@@ -21,30 +21,6 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-@media screen and (max-width: 375px) {
-  .logo {
-    font-size: clamp(2rem, (100vw - 32px), 11.2vw);
-  }
-}
-
-@media screen and (min-width: 375px) {
-  .logo {
-    font-size: clamp(2rem, (100vw - 32px), 11.55vw);
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .logo {
-    font-size: clamp(2rem, (100vw - 32px), 12.05vw);
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .logo {
-    font-size: clamp(2rem, (100vw - 10px), 12vw);
-  }
-}
-
 .search form {
   border: none;
   padding: 0;

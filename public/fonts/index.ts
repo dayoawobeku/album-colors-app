@@ -3,7 +3,6 @@ import localFont from 'next/font/local';
 const tomatoGrotesk = localFont({
   variable: '--font-tomatoGrotesk',
   display: 'swap',
-  preload: true,
   src: [
     {
       path: './TomatoGrotesk-Regular.woff2',

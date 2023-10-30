@@ -29,6 +29,9 @@ const config: Config = {
       },
       transparent: 'transparent',
     },
+    fontFamily: {
+      sans: ['Tomato Grotesk', 'Tahoma'],
+    },
   },
   plugins: [],
 };
