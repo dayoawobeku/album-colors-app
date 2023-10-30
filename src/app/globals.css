@@ -41,7 +41,7 @@ body {
 
 @media screen and (min-width: 1280px) {
   .logo {
-    font-size: clamp(2rem, (100vw - 50px), 12vw);
+    font-size: clamp(2rem, (10vw - 10px), 12vw);
   }
 }
 

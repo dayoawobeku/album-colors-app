@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import {tomatoGrotesk} from '@/assets/fonts';
+import {tomatoGrotesk} from '../../public/fonts';
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
 import './globals.css';
