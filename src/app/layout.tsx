@@ -9,7 +9,7 @@ const metadata: Metadata = {
   description: 'album color homepage',
   openGraph: {
     images:
-      'https://res.cloudinary.com/dspbvhlt6/image/upload/v1698306386/album-colors/Meta_Image_nn6lkv.png',
+      'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
   },
 };
 
