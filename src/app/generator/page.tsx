@@ -4,8 +4,9 @@ import {Album} from '@/types';
 import Palettes from '@/components/palettes';
 
 const metadata: Metadata = {
-  title: 'album color generator page',
-  description: 'album color generator page',
+  title: 'Album Colors Generator | Color Palettes from Music Albums',
+  description:
+    'Explore a vibrant collection of color palettes extracted from your favorite music albums',
 };
 
 export const revalidate = 0;

@@ -3,8 +3,9 @@ import {supabase} from '@/utils/supabase';
 import ArchiveClient from '@/components/archive-client';
 
 const metadata: Metadata = {
-  title: 'album color archive page',
-  description: 'album color archive page',
+  title: 'Album Colors Archive | Explore a Visual Journey Through Music',
+  description:
+    'Dive into our extensive album archive showcasing captivating cover art from a world of music',
 };
 
 export const revalidate = 0;

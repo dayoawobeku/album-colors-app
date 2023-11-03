@@ -1,8 +1,9 @@
 import type {Metadata} from 'next';
 
 const metadata: Metadata = {
-  title: 'album color about page',
-  description: 'album color about page',
+  title: 'About Album Colors | Our Story and Mission',
+  description:
+    'Learn more about Album Colors and why we are turning album covers into beautiful color palettes',
 };
 
 export default async function About() {

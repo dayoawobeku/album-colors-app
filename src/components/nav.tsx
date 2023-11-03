@@ -64,7 +64,13 @@ export default function Nav() {
             className="relative w-full h-0"
             style={{paddingBottom: `${aspectRatio * 100}%`}}
           >
-            <Image src="/logo.svg" alt="" fill className="object-contain" />
+            <Image
+              src="/logo.svg"
+              alt=""
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
         </Link>
         <div className="mt-4 sm:mt-8 flex items-center justify-between gap-4 flex-wrap">

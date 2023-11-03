@@ -3,8 +3,9 @@ import SearchClient from '@/components/search';
 import {supabase} from '@/utils/supabase';
 
 const metadata: Metadata = {
-  title: 'album color search page',
-  description: 'album color search page',
+  title: 'Search Albums and Artistes | Find Color Inspiration in Music',
+  description:
+    'Search and discover a diverse range of albums and artists to inspire your creativity with captivating color palettes',
 };
 
 export const revalidate = 0;

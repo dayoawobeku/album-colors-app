@@ -9,8 +9,9 @@ import {supabase} from '@/utils/supabase';
 import {Album} from '@/types';
 
 const metadata: Metadata = {
-  title: 'album color homepage',
-  description: 'album color homepage',
+  title: 'Album Colors | Color palettes from your favorite music album covers',
+  description:
+    "Discover vibrant color palettes inspired by your favorite artiste's album covers",
 };
 
 export const revalidate = 0;
