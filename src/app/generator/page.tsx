@@ -7,6 +7,21 @@ const metadata: Metadata = {
   title: 'Album Colors Generator | Color Palettes from Music Albums',
   description:
     'Explore a vibrant collection of color palettes extracted from your favorite music albums',
+  openGraph: {
+    title: 'Album Colors Generator | Color Palettes from Music Albums',
+    description:
+      'Explore a vibrant collection of color palettes extracted from your favorite music albums',
+    images:
+      'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+  },
+  twitter: {
+    title: 'Album Colors Generator | Color Palettes from Music Albums',
+    description:
+      'Explore a vibrant collection of color palettes extracted from your favorite music albums',
+    images: {
+      url: 'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+    },
+  },
 };
 
 export const revalidate = 0;

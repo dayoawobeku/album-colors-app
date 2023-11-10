@@ -6,6 +6,21 @@ const metadata: Metadata = {
   title: 'Search Albums and Artistes | Find Color Inspiration in Music',
   description:
     'Search and discover a diverse range of albums and artists to inspire your creativity with captivating color palettes',
+  openGraph: {
+    title: 'Search Albums and Artistes | Find Color Inspiration in Music',
+    description:
+      'Search and discover a diverse range of albums and artists to inspire your creativity with captivating color palettes',
+    images:
+      'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+  },
+  twitter: {
+    title: 'Search Albums and Artistes | Find Color Inspiration in Music',
+    description:
+      'Search and discover a diverse range of albums and artists to inspire your creativity with captivating color palettes',
+    images: {
+      url: 'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+    },
+  },
 };
 
 export const revalidate = 0;

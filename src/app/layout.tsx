@@ -5,8 +5,6 @@ import Footer from '@/components/footer';
 import './globals.css';
 
 const metadata: Metadata = {
-  title: 'album color homepage',
-  description: 'album color homepage',
   openGraph: {
     images:
       'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',

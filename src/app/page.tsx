@@ -12,6 +12,23 @@ const metadata: Metadata = {
   title: 'Album Colors | Color palettes from your favorite music album covers',
   description:
     "Discover vibrant color palettes inspired by your favorite artiste's album covers",
+  openGraph: {
+    title:
+      'Album Colors | Color palettes from your favorite music album covers',
+    description:
+      "Discover vibrant color palettes inspired by your favorite artiste's album covers",
+    images:
+      'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+  },
+  twitter: {
+    title:
+      'Album Colors | Color palettes from your favorite music album covers',
+    description:
+      "Discover vibrant color palettes inspired by your favorite artiste's album covers",
+    images: {
+      url: 'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+    },
+  },
 };
 
 export const revalidate = 0;

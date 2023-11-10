@@ -4,6 +4,21 @@ const metadata: Metadata = {
   title: 'About Album Colors | Our Story and Mission',
   description:
     'Learn more about Album Colors and why we are turning album covers into beautiful color palettes',
+  openGraph: {
+    title: 'About Album Colors | Our Story and Mission',
+    description:
+      'Learn more about Album Colors and why we are turning album covers into beautiful color palettes',
+    images:
+      'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+  },
+  twitter: {
+    title: 'About Album Colors | Our Story and Mission',
+    description:
+      'Learn more about Album Colors and why we are turning album covers into beautiful color palettes',
+    images: {
+      url: 'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+    },
+  },
 };
 
 export default async function About() {

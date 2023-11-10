@@ -6,6 +6,21 @@ const metadata: Metadata = {
   title: 'Album Colors Archive | Explore a Visual Journey Through Music',
   description:
     'Dive into our extensive album archive showcasing captivating cover art from a world of music',
+  openGraph: {
+    title: 'Album Colors Archive | Explore a Visual Journey Through Music',
+    description:
+      'Dive into our extensive album archive showcasing captivating cover art from a world of music',
+    images:
+      'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+  },
+  twitter: {
+    title: 'Album Colors Archive | Explore a Visual Journey Through Music',
+    description:
+      'Dive into our extensive album archive showcasing captivating cover art from a world of music',
+    images: {
+      url: 'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+    },
+  },
 };
 
 export const revalidate = 0;

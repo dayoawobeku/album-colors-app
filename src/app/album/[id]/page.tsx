@@ -32,6 +32,15 @@ export async function generateMetadata(
     description: `${artiste.name} - ${album.album_title}`,
     openGraph: {
       images: [album.cover_image, ...previousImages],
+      title: `${artiste.name} - ${album.album_title}`,
+      description: `${artiste.name} - ${album.album_title}`,
+    },
+    twitter: {
+      title: `${artiste.name} - ${album.album_title}`,
+      description: `${artiste.name} - ${album.album_title}`,
+      images: {
+        url: album.cover_image,
+      },
     },
   };
 }
