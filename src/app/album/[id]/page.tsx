@@ -6,7 +6,7 @@ import {supabase} from '@/utils/supabase';
 import AlbumTable from '@/components/album-table';
 import {external} from '@/assets/images';
 
-export const revalidate = 86400;
+export const revalidate = 0;
 
 export async function generateMetadata(
   {params}: {params: {id: string}},
