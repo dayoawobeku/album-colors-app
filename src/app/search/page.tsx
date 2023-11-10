@@ -24,7 +24,7 @@ const metadata: Metadata = {
   },
 };
 
-export const revalidate = 3600;
+export const revalidate = 0;
 
 export default async function Search() {
   const {data, error} = await supabase.from('artistes').select('*');
