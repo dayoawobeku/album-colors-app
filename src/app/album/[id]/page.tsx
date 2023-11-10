@@ -34,6 +34,7 @@ export async function generateMetadata(
       images: [album.cover_image, ...previousImages],
       title: `${artiste.name} - ${album.album_title}`,
       description: `${artiste.name} - ${album.album_title}`,
+      url: `https://albumcolors.co/album/${id}`,
     },
     twitter: {
       title: `${artiste.name} - ${album.album_title}`,

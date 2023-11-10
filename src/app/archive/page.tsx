@@ -12,6 +12,7 @@ const metadata: Metadata = {
       'Dive into our extensive album archive showcasing captivating cover art from a world of music',
     images:
       'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+    url: 'https://albumcolours.co/archive',
   },
   twitter: {
     title: 'Album Colors Archive | Explore a Visual Journey Through Music',

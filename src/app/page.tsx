@@ -19,6 +19,7 @@ const metadata: Metadata = {
       "Discover vibrant color palettes inspired by your favorite artiste's album covers",
     images:
       'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+    url: 'https://albumcolours.co',
   },
   twitter: {
     title:

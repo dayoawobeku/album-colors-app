@@ -10,6 +10,7 @@ const metadata: Metadata = {
       'Learn more about Album Colors and why we are turning album covers into beautiful color palettes',
     images:
       'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+    url: 'https://albumcolours.co/about',
   },
   twitter: {
     title: 'About Album Colors | Our Story and Mission',

@@ -13,6 +13,7 @@ const metadata: Metadata = {
       'Explore a vibrant collection of color palettes extracted from your favorite music albums',
     images:
       'https://res.cloudinary.com/dedywga3v/image/upload/v1698911657/meta_image_guzgce.png',
+    url: 'https://albumcolours.co/generator',
   },
   twitter: {
     title: 'Album Colors Generator | Color Palettes from Music Albums',
