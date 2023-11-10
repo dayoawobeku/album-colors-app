@@ -59,6 +59,7 @@ export default function Nav() {
         <Link
           href="/"
           className="relative block w-[calc(100vw-24px)] lg:w-[calc(100vw-48px)] max-w-full mt-3 lg:mt-6"
+          aria-label="Home"
         >
           <div
             className="relative w-full h-0"
