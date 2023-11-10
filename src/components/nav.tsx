@@ -74,7 +74,7 @@ export default function Nav() {
             />
           </div>
         </Link>
-        <div className="mt-4 sm:mt-8 flex items-center justify-between gap-4 flex-wrap">
+        <div className="mt-6 sm:mt-8 flex items-center justify-between gap-6 flex-wrap">
           <ul className="uppercase font-bold text-sm flex items-center gap-4 sm:gap-9">
             {LINKS.map(({label, href}) => (
               <li key={label}>
@@ -94,7 +94,7 @@ export default function Nav() {
             <form className="flex items-center gap-1 search">
               <input
                 type="search"
-                className="h-4 placeholder:text-grey uppercase font-bold text-sm outline-none"
+                className="h-4 placeholder:text-grey uppercase font-bold placeholder:text-sm sm:text-sm outline-none w-[calc(100vw-32px)] sm:w-60"
                 placeholder="SEARCH AN ALBUM OR ARTISTE"
                 name="search"
                 aria-label="Search"

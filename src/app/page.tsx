@@ -32,7 +32,7 @@ const metadata: Metadata = {
   },
 };
 
-export const revalidate = 0;
+export const revalidate = 86400;
 
 export default async function Home() {
   const {data, error} = await supabase.from('artistes').select('*');
