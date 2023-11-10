@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {Album, Artist} from '@/types';
 
-export const revalidate = 0;
+export const revalidate = 3600;
 
 export default function ArchiveClient({data}: {data: Artist[]}) {
   const [scrollPosition, setScrollPosition] = useState(0);
