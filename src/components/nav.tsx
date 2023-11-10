@@ -94,7 +94,7 @@ export default function Nav() {
             <form className="flex items-center gap-1 search">
               <input
                 type="search"
-                className="h-4 placeholder:text-grey uppercase font-bold placeholder:text-sm sm:text-sm outline-none w-[calc(100vw-32px)] sm:w-60"
+                className="h-6 sm:h-4 placeholder:text-grey uppercase font-bold placeholder:text-sm sm:text-sm outline-none w-[calc(100vw-32px)] sm:w-60"
                 placeholder="SEARCH AN ALBUM OR ARTISTE"
                 name="search"
                 aria-label="Search"
