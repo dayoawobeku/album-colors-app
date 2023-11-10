@@ -4,7 +4,7 @@ export default function Footer() {
       <p>ALBUM COLORS</p>
       <div className="space-x-4 sm:space-x-9 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
         <a
-          href="https://www.instagram.com/album.colours/"
+          href="https://www.instagram.com/thealbumcolors/"
           target="_blank"
           rel="noopener noreferrer"
         >

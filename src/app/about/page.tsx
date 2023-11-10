@@ -66,12 +66,12 @@ export default async function About() {
           If you’d like to contribute to our efforts or get in touch for any
           other reason, shoot a mail to{' '}
           <a
-            href="mailto:hi@albumcolours.com"
+            href="mailto:hi@albumcolors.co"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline"
           >
-            hi@albumcolours.com
+            hi@albumcolors.co
           </a>
         </p>
       </div>
