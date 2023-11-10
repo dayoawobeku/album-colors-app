@@ -83,6 +83,7 @@ export default function Nav() {
                     isActive(href) ? 'text-grey' : 'text-grey-800'
                   }`}
                   href={href}
+                  aria-label={label}
                 >
                   {label}
                 </Link>
