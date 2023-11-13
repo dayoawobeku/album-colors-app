@@ -1,9 +1,10 @@
 import type {Metadata} from 'next';
+import Script from 'next/script';
+import {Analytics} from '@vercel/analytics/react';
 import {tomatoGrotesk} from '../../public/fonts';
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
 import './globals.css';
-import Script from 'next/script';
 
 const metadata: Metadata = {
   openGraph: {
@@ -32,6 +33,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <Nav />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
