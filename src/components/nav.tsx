@@ -51,6 +51,10 @@ export default function Nav() {
     debouncedHandleSearchChange(newSearchQuery);
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   const aspectRatio = 140 / 1390;
 
   return (
@@ -91,7 +95,10 @@ export default function Nav() {
             ))}
           </ul>
           <search>
-            <form className="flex items-center gap-1 search">
+            <form
+              className="flex items-center gap-1 search"
+              onSubmit={handleSubmit}
+            >
               <input
                 type="search"
                 className="h-6 sm:h-4 placeholder:text-grey uppercase font-bold placeholder:text-sm sm:text-sm outline-none w-[calc(100vw-32px)] sm:w-60"
