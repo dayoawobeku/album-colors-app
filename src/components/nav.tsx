@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {usePathname, useRouter, useSearchParams} from 'next/navigation';
-import debounce from 'lodash/debounce';
 
 const LINKS = [
   {
@@ -26,7 +25,9 @@ export default function Nav() {
   const searchParams = useSearchParams();
   const isActive = (href: string) => pathname === href;
 
-  const debouncedHandleSearchChange = debounce(newSearchQuery => {
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newSearchQuery = event.target.value;
+
     const url = new URLSearchParams(Array.from(searchParams.entries()));
 
     if (newSearchQuery.length > 0) {
@@ -44,15 +45,17 @@ export default function Nav() {
         router.push('/search');
       }
     }
-  }, 1000);
-
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newSearchQuery = event.target.value;
-    debouncedHandleSearchChange(newSearchQuery);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const newSearchQuery = event.currentTarget.search.value;
+    handleSearchChange({
+      target: {
+        value: newSearchQuery,
+      },
+    } as React.ChangeEvent<HTMLInputElement>);
   };
 
   const aspectRatio = 140 / 1390;
@@ -106,7 +109,6 @@ export default function Nav() {
                 name="search"
                 aria-label="Search"
                 defaultValue={searchParams?.get('q') || ''}
-                onChange={handleSearchChange}
                 key={searchParams?.get('q')}
                 autoComplete="off"
               />
