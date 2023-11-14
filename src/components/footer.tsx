@@ -10,7 +10,11 @@ export default function Footer() {
         >
           INSTAGRAM
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://twitter.com/thealbumcolors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           TWITTER
         </a>
       </div>
