@@ -34,8 +34,8 @@ export default async function Archive() {
     .order('created_at', {ascending: false});
 
   return (
-    <Wrapper>
-      <main className="grow relative mt-16 sm:mt-24 basis-full flex items-start justify-between lg:pr-[3.4%]">
+    <Wrapper className="grow">
+      <main className="relative mt-16 sm:mt-24 basis-full flex items-start justify-between lg:pr-[3.4%]">
         <ArchiveClient data={data || []} />
       </main>
     </Wrapper>

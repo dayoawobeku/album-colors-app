@@ -39,8 +39,8 @@ export default async function Home() {
   const {data, error} = await supabase.from('artistes').select('*');
 
   return (
-    <Wrapper>
-      <main className="grow">
+    <Wrapper className="grow">
+      <main>
         <Draggable rootClass={'drag'}>
           <Grid>
             <AlbumCardGrid data={data as Album[]} />

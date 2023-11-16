@@ -25,8 +25,8 @@ const metadata: Metadata = {
 
 export default async function About() {
   return (
-    <Wrapper>
-      <main className="mt-20 md:grow flex flex-col items-start justify-center gap-10 max-w-xl mx-auto">
+    <Wrapper className="md:grow">
+      <main className="mt-20 flex flex-col items-start justify-center gap-10 max-w-xl mx-auto">
         <div className="text-sm">
           <p className="uppercase text-grey font-bold">ABOUT ALBUM COLOURS</p>
           <p className="mt-4 text-grey-800 font-medium">

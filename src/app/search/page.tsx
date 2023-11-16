@@ -31,8 +31,8 @@ export default async function Search() {
   const {data, error} = await supabase.from('artistes').select('*');
 
   return (
-    <Wrapper>
-      <main className="grow mt-16 sm:mt-24">
+    <Wrapper className="grow">
+      <main className="mt-16 sm:mt-24">
         <SearchClient data={data || []} />
       </main>
     </Wrapper>
