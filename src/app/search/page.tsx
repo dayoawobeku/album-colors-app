@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import SearchClient from '@/components/search';
 import {supabase} from '@/utils/supabase';
+import Wrapper from '@/components/wrapper';
 
 const metadata: Metadata = {
   title: 'Search Albums and Artistes | Find Color Inspiration in Music',
@@ -30,9 +31,11 @@ export default async function Search() {
   const {data, error} = await supabase.from('artistes').select('*');
 
   return (
-    <main className="grow mt-16 sm:mt-24">
-      <SearchClient data={data || []} />
-    </main>
+    <Wrapper className="grow">
+      <main className="mt-16 sm:mt-24">
+        <SearchClient data={data || []} />
+      </main>
+    </Wrapper>
   );
 }
 

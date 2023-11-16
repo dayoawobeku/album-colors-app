@@ -25,7 +25,7 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
 
   return (
     <div className="flex basis-full">
-      <table className="w-full basis-full sm:basis-[54.7%] border-separate border-spacing-y-6">
+      <table className="w-full basis-full sm:basis-[54.7%] border-separate -mt-6 border-spacing-y-6">
         <thead>
           <tr>
             <th className="uppercase font-bold text-sm text-grey">Artist</th>
@@ -41,7 +41,7 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
               <tr key={album.album_id} className="group">
                 <td>
                   <Link
-                    className="flex items-center justify-center text-grey-800 font-medium text-sm text-center group-hover:text-grey group-hover:font-bold transition-all ease-in-out duration-[350ms]"
+                    className="flex items-center justify-center text-grey-800 font-medium text-sm text-center group-hover:text-grey group-hover:font-bold transition-all ease-out duration-[350ms]"
                     href={`/album/${album.album_id}`}
                   >
                     {artist.name}
@@ -49,7 +49,7 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
                 </td>
                 <td>
                   <Link
-                    className="flex items-center justify-center text-grey-800 font-medium text-sm text-center group-hover:text-grey group-hover:font-bold transition-all ease-in-out duration-[350ms]"
+                    className="flex items-center justify-center text-grey-800 font-medium text-sm text-center group-hover:text-grey group-hover:font-bold transition-all ease-out duration-[350ms]"
                     href={`/album/${album.album_id}`}
                   >
                     {album.album_title}
@@ -57,7 +57,7 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
                 </td>
                 <td>
                   <Link
-                    className="flex items-center justify-center text-grey-800 font-medium text-sm text-center group-hover:text-grey group-hover:font-bold transition-all ease-in-out duration-[350ms]"
+                    className="flex items-center justify-center text-grey-800 font-medium text-sm text-center group-hover:text-grey group-hover:font-bold transition-all ease-out duration-[350ms]"
                     href={`/album/${album.album_id}`}
                   >
                     {album.release_date.split('-')[0]}
