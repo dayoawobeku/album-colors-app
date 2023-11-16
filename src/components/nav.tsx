@@ -86,7 +86,7 @@ export default function Nav() {
             {LINKS.map(({label, href}) => (
               <li key={label}>
                 <Link
-                  className={`sm:px-1 ${
+                  className={`sm:px-1 transition-all duration-500 ${
                     isActive(href) ? 'text-grey' : 'text-grey-800'
                   }`}
                   href={href}

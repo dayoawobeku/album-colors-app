@@ -3,6 +3,7 @@
 import {useState} from 'react';
 import {hexToRgb} from '@/helpers/hex-to-rgb';
 import {Album, Artist} from '@/types';
+import Wrapper from './wrapper';
 
 export default function Palettes({
   allAlbums,
@@ -124,35 +125,37 @@ export default function Palettes({
         </button>
       </div>
 
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-5 gap-4 lg:gap-9 md:h-[calc(100vw-75.694vw)]">
-        {allAlbums[currentPaletteIndex].palettes.map((palette, index) => (
-          <div
-            key={index}
-            className="w-full h-24 md:h-full rounded relative cursor-pointer group"
-            style={{backgroundColor: palette}}
-            tabIndex={0}
-            onClick={() => handleCopy(index)}
-          >
+      <Wrapper>
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-5 gap-4 lg:gap-9 md:h-[calc(100vw-75.694vw)]">
+          {allAlbums[currentPaletteIndex].palettes.map((palette, index) => (
             <div
-              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase opacity-0 transition-opacity duration-300 ${
-                copiedStates[index] ? 'opacity-100' : 'opacity-0'
-              }`}
+              key={index}
+              className="w-full h-24 md:h-full rounded relative cursor-pointer group"
+              style={{backgroundColor: palette}}
+              tabIndex={0}
+              onClick={() => handleCopy(index)}
             >
-              <p className="text-xs sm:text-sm font-semibold">copied</p>
-            </div>
-            <div className="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 right-2 lg:right-5 space-y-4 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-              <div className="flex flex-wrap items-center justify-between uppercase text-xs sm:text-sm font-semibold text-white">
-                <p>HEX</p>
-                <p>{palette.replace('#', '').toUpperCase()}</p>
+              <div
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase opacity-0 transition-opacity duration-300 ${
+                  copiedStates[index] ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <p className="text-xs sm:text-sm font-semibold">copied</p>
               </div>
-              <div className="flex flex-wrap items-center justify-between uppercase text-xs sm:text-sm font-semibold text-white">
-                <p>RGB</p>
-                <p>{hexToRgb(palette)}</p>
+              <div className="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 right-2 lg:right-5 space-y-4 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                <div className="flex flex-wrap items-center justify-between uppercase text-xs sm:text-sm font-semibold text-white">
+                  <p>HEX</p>
+                  <p>{palette.replace('#', '').toUpperCase()}</p>
+                </div>
+                <div className="flex flex-wrap items-center justify-between uppercase text-xs sm:text-sm font-semibold text-white">
+                  <p>RGB</p>
+                  <p>{hexToRgb(palette)}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </Wrapper>
     </>
   );
 }

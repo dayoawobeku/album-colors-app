@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {supabase} from '@/utils/supabase';
 import ArchiveClient from '@/components/archive-client';
+import Wrapper from '@/components/wrapper';
 
 const metadata: Metadata = {
   title: 'Album Colors Archive | Explore a Visual Journey Through Music',
@@ -33,9 +34,11 @@ export default async function Archive() {
     .order('created_at', {ascending: false});
 
   return (
-    <main className="grow relative mt-16 sm:mt-24 basis-full flex items-start justify-between lg:pr-[3.4%]">
-      <ArchiveClient data={data || []} />
-    </main>
+    <Wrapper>
+      <main className="grow relative mt-16 sm:mt-24 basis-full flex items-start justify-between lg:pr-[3.4%]">
+        <ArchiveClient data={data || []} />
+      </main>
+    </Wrapper>
   );
 }
 
