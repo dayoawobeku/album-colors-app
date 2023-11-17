@@ -54,3 +54,12 @@ input[type='search']::-webkit-search-results-decoration {
 .container-class {
   -ms-overflow-style: none; /* Microsoft Edge */
 }
+
+@media screen and (min-width: 640px) {
+  .truncated-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
