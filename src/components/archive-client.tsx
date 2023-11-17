@@ -38,11 +38,11 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
         <tbody>
           {data?.map((artist: Artist) =>
             artist.albums.map((album: Album) => (
-              <tr key={album.album_id} className="group">
+              <tr key={album?.album_id} className="group">
                 <td>
                   <Link
                     className="flex items-center justify-center text-grey-800 font-medium text-sm text-center group-hover:text-grey group-hover:font-bold transition-all ease-out duration-[350ms]"
-                    href={`/album/${album.album_id}`}
+                    href={`/album/${album?.album_id}`}
                   >
                     {artist.name}
                   </Link>
@@ -50,17 +50,17 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
                 <td>
                   <Link
                     className="flex items-center justify-center text-grey-800 font-medium text-sm text-center group-hover:text-grey group-hover:font-bold transition-all ease-out duration-[350ms]"
-                    href={`/album/${album.album_id}`}
+                    href={`/album/${album?.album_id}`}
                   >
-                    {album.album_title}
+                    {album?.album_title || '-'}
                   </Link>
                 </td>
                 <td>
                   <Link
                     className="flex items-center justify-center text-grey-800 font-medium text-sm text-center group-hover:text-grey group-hover:font-bold transition-all ease-out duration-[350ms]"
-                    href={`/album/${album.album_id}`}
+                    href={`/album/${album?.album_id}`}
                   >
-                    {album.release_date.split('-')[0]}
+                    {album?.release_date?.split('-')[0] || '-'}
                   </Link>
                 </td>
                 <td className="hidden sm:block pointer-events-none">
@@ -70,8 +70,8 @@ export default function ArchiveClient({data}: {data: Artist[]}) {
                     } right-[4.5%] w-[calc(100vw-72.22vw)] h-[calc(100vw-68.75vw)] opacity-0 group-hover:opacity-100 transition-opacity ease-in duration-[350ms]`}
                   >
                     <Image
-                      src={album.cover_image}
-                      alt={album.album_title}
+                      src={album?.cover_image}
+                      alt={album?.album_title}
                       sizes="(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 50vw"
                       fill
                       quality={100}
