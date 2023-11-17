@@ -17,11 +17,11 @@ export async function generateMetadata(
   const {data} = await supabase.from('artistes').select('*');
 
   const artiste = data?.find(
-    artist => artist?.albums?.some((album: Album) => album.album_id === id),
+    artist => artist?.albums?.some((album: Album) => album?.album_id === id),
   );
 
   const album: Album = artiste.albums.find(
-    (album: Album) => album.album_id === id,
+    (album: Album) => album?.album_id === id,
   );
 
   // optionally access and extend (rather than replace) parent metadata
@@ -52,11 +52,11 @@ export default async function AlbumPage({params}: {params: {id: string}}) {
   const {data, error} = await supabase.from('artistes').select('*');
 
   const artiste = data?.find(
-    artist => artist?.albums?.some((album: Album) => album.album_id === id),
+    artist => artist?.albums?.some((album: Album) => album?.album_id === id),
   );
 
   const album: Album = artiste.albums.find(
-    (album: Album) => album.album_id === id,
+    (album: Album) => album?.album_id === id,
   );
 
   const truncate = (str: string, n: number) => {

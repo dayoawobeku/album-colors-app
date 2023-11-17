@@ -14,11 +14,11 @@ export default function NextPrevAlbum({
   const router = useRouter();
   const artiste = data?.find(
     artist =>
-      artist?.albums?.some((album: Album) => album.album_id === params.id),
+      artist?.albums?.some((album: Album) => album?.album_id === params.id),
   );
 
   const currentAlbumIndex = artiste?.albums.findIndex(
-    (album: Album) => album.album_id === params.id,
+    (album: Album) => album?.album_id === params.id,
   );
 
   const goToNextAlbum = () => {
@@ -27,7 +27,7 @@ export default function NextPrevAlbum({
       currentAlbumIndex !== undefined &&
       currentAlbumIndex < artistAlbums.length - 1
     ) {
-      const nextAlbumId = artistAlbums[currentAlbumIndex + 1].album_id;
+      const nextAlbumId = artistAlbums[currentAlbumIndex + 1]?.album_id;
       return nextAlbumId;
     } else {
       // Check if this is the last artist and the last album
@@ -52,7 +52,7 @@ export default function NextPrevAlbum({
 
   const goToPreviousAlbum = () => {
     if (currentAlbumIndex !== undefined && currentAlbumIndex > 0) {
-      const previousAlbumId = artiste?.albums[currentAlbumIndex - 1].album_id;
+      const previousAlbumId = artiste?.albums[currentAlbumIndex - 1]?.album_id;
       return previousAlbumId;
     } else {
       // Check if this is the first artist, if so, go to the last artist
