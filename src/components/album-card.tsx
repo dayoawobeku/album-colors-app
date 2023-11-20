@@ -46,7 +46,6 @@ function AlbumCard({album}: {album: Album}) {
               width={768}
               height={768}
               className="rounded object-cover"
-              quality={100}
               fetchPriority="high"
               priority
             />
