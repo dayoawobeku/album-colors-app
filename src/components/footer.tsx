@@ -18,7 +18,7 @@ export default function Footer() {
           TWITTER
         </a>
       </div>
-      <p>© 2023 ALL RIGHTS RESERVED</p>
+      <p>© {new Date().getFullYear()} ALL RIGHTS RESERVED</p>
     </footer>
   );
 }
