@@ -70,12 +70,20 @@ export default async function About() {
             If you’d like to contribute to our efforts or get in touch for any
             other reason, shoot a mail to{' '}
             <a
-              href="mailto:hi@albumcolors.co"
+              href="mailto:dayoawobeku@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline"
             >
-              hi@albumcolors.co
+              Dayo
+            </a> {' '} or {' '}
+            <a
+              href="mailto:ajibike.oyinda@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Oyindamola
             </a>
           </p>
         </div>
